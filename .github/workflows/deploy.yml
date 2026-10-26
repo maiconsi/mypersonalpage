@@ -5,49 +5,34 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
-# Necessário para autenticação OIDC e publicação no Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Evita concorrência de deploys simultâneos
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build project
-        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Altere para o diretório de saída do seu SSG (ex: 'public' no Hugo, 'dist' no Astro)
-          path: ./dist 
+          # Aponta para a raiz do repositório onde está o index.html e o CNAME
+          path: '.'
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
