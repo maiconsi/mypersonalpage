@@ -1,17 +1,15 @@
-name: Deploy Astro to GitHub Pages
+name: Deploy Astro Site to GitHub Pages
 
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
 
-# Permissões necessárias para autenticação OIDC e deploy no Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Garante apenas um deploy simultâneo
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -27,13 +25,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
       - name: Instalar Dependências
         run: npm ci
 
-      - name: Compilar Projeto
+      - name: Compilar Projeto Estático
         run: npm run build
 
       - name: Upload do Artefato do Pages
