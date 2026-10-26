@@ -1,38 +1,54 @@
-name: Deploy to GitHub Pages
+name: Deploy Astro to GitHub Pages
 
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
 
+# Permissões necessárias para autenticação OIDC e deploy no Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Garante apenas um deploy simultâneo
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
+  build:
+    name: Build Astro Site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar Dependências
+        run: npm ci
+
+      - name: Compilar Projeto
+        run: npm run build
+
+      - name: Upload do Artefato do Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
   deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Aponta para a raiz do repositório onde está o index.html e o CNAME
-          path: '.'
-
-      - name: Deploy to GitHub Pages
+      - name: Publicar no GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

@@ -1,5 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Maicon Evangelista | Cloud, SRE & Platform Engineering", 
+  description = "Portfólio profissional e blog sobre Cloud Architecture, DevOps, SRE e AIOps." 
+} = Astro.props;
+---
+
+<!text/html>
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +21,13 @@
     
     <!-- Meta Tags Principais -->
     <meta name="description" content="Portfólio profissional e blog de Maicon da Silva Evangelista. Especialista em Arquitetura Cloud (AWS), DevOps, SRE, Kubernetes e automação de plataformas de missão crítica.">
+    <meta name="keywords" content="Maicon da Silva Evangelista, Cloud Architect, SRE, DevOps, AWS, Kubernetes, Terraform, AIOps, Engenharia de Software">
     <meta name="author" content="Maicon da Silva Evangelista">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://maiconevangelista.com.br/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
     <!-- Open Graph / LinkedIn / Facebook -->
     <meta property="og:type" content="website">
@@ -17,6 +35,7 @@
     <meta property="og:title" content="Maicon da Silva Evangelista | Senior Cloud Architect & SRE">
     <meta property="og:description" content="Mais de 26 anos de experiência em Engenharia de Software, Arquitetura Cloud (AWS), DevOps, SRE e artigos técnicos sobre AIOps e cultura de infraestrutura.">
     <meta property="og:image" content="https://maiconevangelista.com.br/assets/og-image.png">
+    <meta property="og:locale" content="pt_BR">
 
     <!-- Twitter Cards -->
     <meta property="twitter:card" content="summary_large_image">
@@ -25,10 +44,28 @@
     <meta property="twitter:description" content="Especialista em Arquitetura Cloud (AWS), DevOps, SRE e automação de infraestrutura.">
     <meta property="twitter:image" content="https://maiconevangelista.com.br/assets/og-image.png">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #0f172a;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
 
     <!-- Dados Estruturados (Schema.org - Person) -->
@@ -61,22 +98,25 @@
     </script>
 </head>
 <body class="bg-slate-50 text-slate-800">
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
     <!-- Header / Hero Section -->
     <header class="bg-slate-900 text-white py-16">
         <div class="max-w-4xl mx-auto px-4">
             <h1 class="text-4xl font-bold mb-2">Maicon da Silva Evangelista</h1>
             <p class="text-xl text-slate-300">Senior Cloud Architect | DevOps & SRE | Tech Lead</p>
-            <div class="mt-6 flex flex-wrap gap-4">
-                <a href="https://www.linkedin.com/in/maiconsi/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">LinkedIn</a>
-                <a href="https://github.com/maiconsi" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">GitHub</a>
-                <a href="mailto:maiconsi@hotmail.com" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">Contato</a>
-            </div>
+            <nav class="mt-6" aria-label="Redes sociais e contato">
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://www.linkedin.com/in/maiconsi/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 font-medium transition-colors" aria-label="LinkedIn de Maicon (abre em nova aba)">LinkedIn</a>
+                    <a href="https://github.com/maiconsi" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 font-medium transition-colors" aria-label="GitHub de Maicon (abre em nova aba)">GitHub</a>
+                    <a href="mailto:maiconsi@hotmail.com" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">Contato</a>
+                </div>
+            </nav>
         </div>
     </header>
 
     <!-- Conteúdo Principal -->
-    <main class="max-w-4xl mx-auto px-4 py-12 grid gap-12">
+    <main id="main-content" class="max-w-4xl mx-auto px-4 py-12 grid gap-12">
         
         <!-- Resumo Profissional -->
         <section>
@@ -124,7 +164,7 @@
         <section>
             <div class="flex justify-between items-center border-b-2 border-slate-200 pb-2 mb-6">
                 <h2 class="text-2xl font-bold">Artigos & Publicações</h2>
-                <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-600 hover:text-blue-800">Ver no Dev.to &rarr;</a>
+                <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-700 hover:text-blue-900" aria-label="Ver todos os artigos no Dev.to (abre em nova aba)">Ver no Dev.to &rarr;</a>
             </div>
             
             <div class="grid md:grid-cols-2 gap-6">
@@ -134,16 +174,16 @@
                         <div class="flex items-center gap-2 text-xs text-slate-500 mb-2">
                             <span class="bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-medium">AIOps</span>
                             <span>•</span>
-                            <time>2026</time>
+                            <time datetime="2026">2026</time>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2 hover:text-blue-600">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2 hover:text-blue-700">
                             <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer">Aplicando Inteligência Artificial no Monitoramento e Operação de Infraestrutura (AIOps)</a>
                         </h3>
-                        <p class="text-sm text-slate-600 mb-4 line-clamp-3">
+                        <p class="text-sm text-slate-600 mb-4 line-clamp-3 leading-relaxed">
                             Uma análise prática de como modelos preditivos e detecção de anomalias reduzem o MTTR e automatizam a remediação de incidentes em clusters Kubernetes de alta disponibilidade.
                         </p>
                     </div>
-                    <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-600 hover:underline">Ler artigo completo &rarr;</a>
+                    <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-700 hover:underline" aria-label="Ler artigo completo sobre AIOps (abre em nova aba)">Ler artigo completo &rarr;</a>
                 </article>
 
                 <!-- Artigo 2 -->
@@ -152,16 +192,16 @@
                         <div class="flex items-center gap-2 text-xs text-slate-500 mb-2">
                             <span class="bg-slate-100 text-slate-800 px-2 py-0.5 rounded font-medium">DevOps & SRE</span>
                             <span>•</span>
-                            <time>2026</time>
+                            <time datetime="2026">2026</time>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2 hover:text-blue-600">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2 hover:text-blue-700">
                             <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer">Estruturando Pipelines de CI/CD Resilientes com GitHub Actions e Terraform</a>
                         </h3>
-                        <p class="text-sm text-slate-600 mb-4 line-clamp-3">
+                        <p class="text-sm text-slate-600 mb-4 line-clamp-3 leading-relaxed">
                             Boas práticas para provisionamento de infraestrutura como código (IaC), gestão de estados remotos e automação de deploys multi-ambiente sem downtime.
                         </p>
                     </div>
-                    <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-600 hover:underline">Ler artigo completo &rarr;</a>
+                    <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-700 hover:underline" aria-label="Ler artigo completo sobre Pipelines CI/CD (abre em nova aba)">Ler artigo completo &rarr;</a>
                 </article>
             </div>
         </section>
