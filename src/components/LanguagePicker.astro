@@ -1,0 +1,30 @@
+---
+import { languages, type Lang, getLocaleUrl } from '../i18n';
+
+interface Props {
+  currentLang: Lang;
+}
+
+const { currentLang } = Astro.props;
+---
+
+<div class="flex items-center gap-1 bg-slate-900/90 border border-slate-700/80 rounded-lg p-1 text-xs font-semibold shadow-inner" aria-label="Seletor de Idioma">
+  {Object.entries(languages).map(([langKey, label]) => {
+    const isCurrent = langKey === currentLang;
+    const url = getLocaleUrl(langKey as Lang);
+    return (
+      <a
+        href={url}
+        class={`px-2 py-1 rounded transition-colors ${
+          isCurrent
+            ? 'bg-indigo-600 text-white font-bold shadow-sm'
+            : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
+        }`}
+        aria-label={`Mudar idioma para ${label}`}
+        aria-current={isCurrent ? 'page' : undefined}
+      >
+        {langKey.toUpperCase()}
+      </a>
+    );
+  })}
+</div>

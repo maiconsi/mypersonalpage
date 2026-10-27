@@ -1,24 +1,33 @@
 ---
 import '../styles/global.css';
+import type { Lang } from '../i18n';
 
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string;
   image?: string;
+  lang?: Lang;
 }
 
 const { 
+  lang = 'pt',
   title = "Maicon da Silva Evangelista | Senior Cloud Architect & SRE", 
   description = "Portfólio profissional e blog de Maicon da Silva Evangelista. Especialista em Arquitetura Cloud (AWS), DevOps, SRE, Kubernetes e automação de plataformas de missão crítica.",
+  keywords = "Maicon da Silva Evangelista, Cloud Architect, SRE, DevOps, AWS, Kubernetes, Terraform, Observabilidade, FinOps, Engenharia de Software, Astro, GitHub Pages",
   image = "/og-image.png"
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://maiconevangelista.com.br');
 const ogImageURL = new URL(image, Astro.site || 'https://maiconevangelista.com.br');
+
+const htmlLang = lang === 'pt' ? 'pt-BR' : lang;
+const ogLocale = lang === 'pt' ? 'pt_BR' : lang === 'es' ? 'es_ES' : 'en_US';
+const siteOrigin = 'https://maiconevangelista.com.br';
 ---
 
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang={htmlLang} class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,10 +35,17 @@ const ogImageURL = new URL(image, Astro.site || 'https://maiconevangelista.com.b
     
     <!-- Meta Tags Principais -->
     <meta name="description" content={description}>
-    <meta name="keywords" content="Maicon da Silva Evangelista, Cloud Architect, SRE, DevOps, AWS, Kubernetes, Terraform, Observabilidade, FinOps, Engenharia de Software, Astro, GitHub Pages">
+    <meta name="keywords" content={keywords}>
     <meta name="author" content="Maicon da Silva Evangelista">
     <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="faF2LhrGH1LmcuiYtLprM2IamgSnN2luXZbg4vj56V8" />
     <link rel="canonical" href={canonicalURL.href}>
+
+    <!-- Hreflang Tags de Internacionalização -->
+    <link rel="alternate" hreflang="pt" href={`${siteOrigin}/`}>
+    <link rel="alternate" hreflang="en" href={`${siteOrigin}/en`}>
+    <link rel="alternate" hreflang="es" href={`${siteOrigin}/es`}>
+    <link rel="alternate" hreflang="x-default" href={`${siteOrigin}/`}>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -41,7 +57,7 @@ const ogImageURL = new URL(image, Astro.site || 'https://maiconevangelista.com.b
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
     <meta property="og:image" content={ogImageURL.href}>
-    <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale" content={ogLocale}>
 
     <!-- Twitter Cards -->
     <meta property="twitter:card" content="summary_large_image">
