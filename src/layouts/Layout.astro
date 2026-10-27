@@ -29,6 +29,16 @@ const siteOrigin = 'https://maiconevangelista.com.br';
 <!DOCTYPE html>
 <html lang={htmlLang} class="scroll-smooth">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-JJYZJN1M5C"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JJYZJN1M5C');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
