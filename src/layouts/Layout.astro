@@ -4,12 +4,17 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 
 const { 
   title = "Maicon da Silva Evangelista | Senior Cloud Architect & SRE", 
-  description = "Portfólio profissional e blog de Maicon da Silva Evangelista. Especialista em Arquitetura Cloud (AWS), DevOps, SRE, Kubernetes e automação de plataformas de missão crítica." 
+  description = "Portfólio profissional e blog de Maicon da Silva Evangelista. Especialista em Arquitetura Cloud (AWS), DevOps, SRE, Kubernetes e automação de plataformas de missão crítica.",
+  image = "/og-image.png"
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://maiconevangelista.com.br');
+const ogImageURL = new URL(image, Astro.site || 'https://maiconevangelista.com.br');
 ---
 
 <!DOCTYPE html>
@@ -21,63 +26,82 @@ const {
     
     <!-- Meta Tags Principais -->
     <meta name="description" content={description}>
-    <meta name="keywords" content="Maicon da Silva Evangelista, Cloud Architect, SRE, DevOps, AWS, Kubernetes, Terraform, AIOps, Engenharia de Software">
+    <meta name="keywords" content="Maicon da Silva Evangelista, Cloud Architect, SRE, DevOps, AWS, Kubernetes, Terraform, Observabilidade, FinOps, Engenharia de Software, Astro, GitHub Pages">
     <meta name="author" content="Maicon da Silva Evangelista">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://maiconevangelista.com.br/">
+    <link rel="canonical" href={canonicalURL.href}>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
     <!-- Open Graph / LinkedIn / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://maiconevangelista.com.br/">
+    <meta property="og:url" content={canonicalURL.href}>
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
-    <meta property="og:image" content="https://maiconevangelista.com.br/og-image.png">
+    <meta property="og:image" content={ogImageURL.href}>
     <meta property="og:locale" content="pt_BR">
 
     <!-- Twitter Cards -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://maiconevangelista.com.br/">
+    <meta property="twitter:url" content={canonicalURL.href}>
     <meta property="twitter:title" content={title}>
     <meta property="twitter:description" content={description}>
-    <meta property="twitter:image" content="https://maiconevangelista.com.br/og-image.png">
+    <meta property="twitter:image" content={ogImageURL.href}>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Dados Estruturados (Schema.org - Person) -->
+    <!-- Dados Estruturados (Schema.org - Person & ProfilePage) -->
     <script type="application/ld+json" is:inline>
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Maicon da Silva Evangelista",
-      "url": "https://maiconevangelista.com.br",
-      "jobTitle": "Lead Solution Consultant & Cloud Architect",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "FICO"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/maiconsi/",
-        "https://github.com/maiconsi"
-      ],
-      "knowsAbout": [
-        "Cloud Computing",
-        "AWS",
-        "DevOps",
-        "Site Reliability Engineering",
-        "Kubernetes",
-        "Terraform",
-        "AIOps"
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://maiconevangelista.com.br/#person",
+          "name": "Maicon da Silva Evangelista",
+          "url": "https://maiconevangelista.com.br",
+          "jobTitle": "Senior Cloud Architect & SRE Specialist",
+          "sameAs": [
+            "https://www.linkedin.com/in/maiconsi/",
+            "https://github.com/maiconsi"
+          ],
+          "knowsAbout": [
+            "Cloud Architecture",
+            "AWS",
+            "DevOps",
+            "Site Reliability Engineering (SRE)",
+            "Kubernetes",
+            "Terraform",
+            "Observability",
+            "FinOps",
+            "CI/CD"
+          ]
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://maiconevangelista.com.br/#webpage",
+          "url": "https://maiconevangelista.com.br",
+          "name": "Maicon da Silva Evangelista | Senior Cloud Architect & SRE",
+          "isPartOf": {
+            "@type": "WebSite",
+            "name": "Maicon da Silva Evangelista",
+            "url": "https://maiconevangelista.com.br"
+          },
+          "mainEntity": {
+            "@id": "https://maiconevangelista.com.br/#person"
+          }
+        }
       ]
     }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col font-sans">
     <slot />
 </body>
 </html>
+

@@ -1,0 +1,7 @@
+# Diretrizes do Projeto - Portfólio & Blog Astro
+
+- Stack: Astro (Static Output), Tailwind CSS v4 (@tailwindcss/vite), TypeScript.
+- Estilos: Use exclusivamente utilitários do Tailwind v4. Não utilize diretivas legadas do PostCSS como `@tailwind base;`.
+- Imagens e SEO: Imagens públicas e Open Graph (`og-image.png`) devem residir na pasta `public/` para garantir caminhos absolutos e URLs estáticas.
+- Semântica: Priorize tags HTML5 semânticas (<main>, <section>, <article>, <header>, <footer>) e atributos de acessibilidade (a11y).
+- Diffs: Ao alterar componentes .astro, preserve a estrutura Frontmatter (entre ---) e não duplique importações.

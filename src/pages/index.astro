@@ -6,162 +6,727 @@ import Layout from '../layouts/Layout.astro';
     <!-- Link de Acessibilidade -->
     <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-lg font-extrabold text-slate-100 hover:text-indigo-400 transition-colors flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-indigo-500 inline-block animate-pulse"></span>
+                Maicon Evangelista
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="#sobre" class="hover:text-indigo-400 transition-colors">Sobre</a>
+                <a href="#competencias" class="hover:text-indigo-400 transition-colors">Competências</a>
+                <a href="#projetos" class="hover:text-indigo-400 transition-colors">Projetos</a>
+                <a href="#experiencia" class="hover:text-indigo-400 transition-colors">Experiência</a>
+                <a href="#mentoria" class="hover:text-indigo-400 transition-colors">Mentoria</a>
+                <a href="#artigos" class="hover:text-indigo-400 transition-colors">Artigos</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a 
+                    href="mailto:maiconsi@hotmail.com" 
+                    class="text-xs sm:text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white px-3.5 py-1.5 rounded-lg transition-all shadow-md shadow-indigo-600/20"
+                    aria-label="Entrar em contato via e-mail"
+                >
+                    Contato
+                </a>
+            </div>
+        </div>
+    </header>
+
     <!-- Container Principal -->
-    <main id="main-content" class="max-w-4xl mx-auto px-4 py-8 md:py-12 space-y-12">
+    <main id="main-content" class="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-16 space-y-20">
         
-        <!-- Cabeçalho / Apresentação (Hero) -->
-        <header class="flex flex-col md:flex-row items-center gap-6 border-b border-slate-200 pb-8">
-            <img 
-                src="/Profile_Photo.png" 
-                alt="Foto de perfil de Maicon da Silva Evangelista" 
-                width="2208"
-                height="2944"
-                loading="eager"
-                decoding="async"
-                class="w-32 h-32 rounded-full border-2 border-slate-300 shadow-md object-cover object-center flex-shrink-0"
-            >
-            
-            <div class="text-center md:text-left">
-                <h1 class="text-3xl font-bold text-slate-900">Maicon da Silva Evangelista</h1>
-                <p class="text-lg font-medium text-slate-600 mt-1">Lead Solution Consultant & Cloud Architect | DevOps & SRE Specialist</p>
-                
-                <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-4">
-                    <a href="https://www.linkedin.com/in/maiconsi/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-1.5 rounded-md text-sm font-semibold hover:bg-blue-700 transition" aria-label="Acessar perfil no LinkedIn (abre em nova aba)">LinkedIn</a>
-                    <a href="https://github.com/maiconsi" target="_blank" rel="noopener noreferrer" class="bg-slate-800 text-white px-4 py-1.5 rounded-md text-sm font-semibold hover:bg-slate-900 transition" aria-label="Acessar perfil no GitHub (abre em nova aba)">GitHub</a>
-                    <a href="mailto:maiconsi@gmail.com" class="border border-slate-300 text-slate-700 px-4 py-1.5 rounded-md text-sm font-semibold hover:bg-slate-100 transition" aria-label="Enviar e-mail para Maicon da Silva Evangelista">E-mail</a>
+        <!-- Hero Section: Layout em Grid/Flex de dois blocos -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center border-b border-slate-800/80 pb-16">
+            <!-- Bloco 1: Apresentação Executiva -->
+            <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+                        Senior Cloud Architect & SRE Specialist
+                    </div>
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Disponível para Novas Oportunidades
+                    </div>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-100 tracking-tight leading-tight">
+                    Maicon da Silva <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Evangelista</span>
+                </h1>
+
+                <p class="text-lg font-medium text-slate-300">
+                    Senior Cloud Architect & SRE Specialist | Lead Solution Consultant
+                </p>
+
+                <p class="text-slate-400 leading-relaxed text-sm sm:text-base max-w-2xl">
+                    Com mais de 26 anos de experiência em Engenharia de Software e Infraestrutura, atuo na concepção, migração e sustentação de arquiteturas distribuídas e plataformas resilientes de missão crítica em nuvem.
+                </p>
+
+                <!-- Botoes de Ação / Redes Sociais -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-3 pt-2">
+                    <a href="https://www.linkedin.com/in/maiconsi/" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-4 py-2 rounded-xl text-sm transition-all shadow-lg shadow-indigo-600/25" aria-label="Acessar perfil no LinkedIn (abre em nova aba)">LinkedIn</a>
+                    <a href="https://github.com/maiconsi" target="_blank" rel="noopener noreferrer" class="bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-4 py-2 rounded-xl text-sm transition-all" aria-label="Acessar perfil no GitHub (abre em nova aba)">GitHub</a>
+                    <a href="mailto:maiconsi@hotmail.com" class="bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700/80 font-semibold px-4 py-2 rounded-xl text-sm transition-all" aria-label="Enviar e-mail para Maicon da Silva Evangelista">E-mail</a>
                 </div>
             </div>
-        </header>
+
+            <!-- Bloco 2: Avatar Profissional -->
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 opacity-30 group-hover:opacity-60 blur-lg transition duration-500"></div>
+                    <img 
+                        src="/Profile_Photo.png" 
+                        alt="Foto de perfil profissional de Maicon da Silva Evangelista" 
+                        width="2208"
+                        height="2944"
+                        loading="eager"
+                        decoding="async"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80';"
+                        class="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-2 border-slate-800 ring-2 ring-indigo-500/50 shadow-2xl shadow-indigo-500/10 object-cover object-center transition-all duration-300 group-hover:scale-[1.02]"
+                    >
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Tech Badges Section: Destaque de Competências -->
+        <section id="competencias" class="space-y-6">
+            <div class="text-center md:text-left space-y-1">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400">Ecossistema Técnico</h2>
+                <p class="text-xl font-bold text-slate-100">Principais Competências em Destaque</p>
+            </div>
+
+            <div class="flex flex-wrap gap-3 items-center justify-center md:justify-start">
+                <span class="bg-slate-800/60 border border-slate-700/50 backdrop-blur-sm hover:border-indigo-500/50 transition-all text-slate-200 text-xs sm:text-sm font-medium px-4 py-2 rounded-full inline-flex items-center gap-2 shadow-sm group">
+                    <span class="w-2 h-2 rounded-full bg-indigo-400 group-hover:scale-125 transition-transform"></span>
+                    Cloud Architecture
+                </span>
+                <span class="bg-slate-800/60 border border-slate-700/50 backdrop-blur-sm hover:border-indigo-500/50 transition-all text-slate-200 text-xs sm:text-sm font-medium px-4 py-2 rounded-full inline-flex items-center gap-2 shadow-sm group">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform"></span>
+                    SRE
+                </span>
+                <span class="bg-slate-800/60 border border-slate-700/50 backdrop-blur-sm hover:border-indigo-500/50 transition-all text-slate-200 text-xs sm:text-sm font-medium px-4 py-2 rounded-full inline-flex items-center gap-2 shadow-sm group">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 group-hover:scale-125 transition-transform"></span>
+                    DevOps
+                </span>
+                <span class="bg-slate-800/60 border border-slate-700/50 backdrop-blur-sm hover:border-indigo-500/50 transition-all text-slate-200 text-xs sm:text-sm font-medium px-4 py-2 rounded-full inline-flex items-center gap-2 shadow-sm group">
+                    <span class="w-2 h-2 rounded-full bg-purple-400 group-hover:scale-125 transition-transform"></span>
+                    Observabilidade
+                </span>
+                <span class="bg-slate-800/60 border border-slate-700/50 backdrop-blur-sm hover:border-indigo-500/50 transition-all text-slate-200 text-xs sm:text-sm font-medium px-4 py-2 rounded-full inline-flex items-center gap-2 shadow-sm group">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 group-hover:scale-125 transition-transform"></span>
+                    CI/CD
+                </span>
+                <span class="bg-slate-800/60 border border-slate-700/50 backdrop-blur-sm hover:border-indigo-500/50 transition-all text-slate-200 text-xs sm:text-sm font-medium px-4 py-2 rounded-full inline-flex items-center gap-2 shadow-sm group">
+                    <span class="w-2 h-2 rounded-full bg-blue-400 group-hover:scale-125 transition-transform"></span>
+                    Terraform
+                </span>
+                <span class="bg-slate-800/60 border border-slate-700/50 backdrop-blur-sm hover:border-indigo-500/50 transition-all text-slate-200 text-xs sm:text-sm font-medium px-4 py-2 rounded-full inline-flex items-center gap-2 shadow-sm group">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 group-hover:scale-125 transition-transform"></span>
+                    Kubernetes
+                </span>
+            </div>
+        </section>
 
         <!-- Sobre Mim / Resumo Profissional -->
-        <section>
-            <h2 class="text-2xl font-bold border-b-2 border-slate-200 pb-2 mb-4">Sobre Mim</h2>
-            <p class="text-slate-600 leading-relaxed mb-4">
+        <section id="sobre" class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-sm space-y-4 shadow-xl">
+            <div class="flex items-center gap-3">
+                <div class="w-1 h-6 bg-indigo-500 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-slate-100">Sobre Mim</h2>
+            </div>
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
                 Com mais de 26 anos de experiência consolidada em Engenharia de Software e Infraestrutura, atuo na concepção, migração e sustentação de arquiteturas distribuídas e plataformas resilientes de missão crítica. Especializado em ecossistemas Cloud Native (AWS), automação de infraestrutura como código (IaC), orquestração de microsserviços e implementação da cultura SRE e DevOps.
             </p>
-            <p class="text-slate-600 leading-relaxed">
-                Minha trajetória abrange desde o desenvolvimento e modernização de aplicações legadas até a liderança técnica em projetos de transformação digital de alta complexidade. Atualmente, foco na interseção entre resiliência operacional, eficiência de custos em nuvem (FinOps) e aplicação de inteligência artificial em operações de TI (AIOps).
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                Minha trajetória abrange desde o desenvolvimento e modernização de aplicações legadas até a liderança técnica em projetos de transformação digital de alta complexidade. Atualmente, foco na interseção entre resiliência operacional, eficiência de custos em nuvem (FinOps) e observabilidade avançada, preparando-me para iniciar especialização acadêmica em inteligência artificial aplicada a operações de TI (AIOps).
             </p>
         </section>
 
         <!-- Principais Competências Técnico-Operacionais -->
-        <section>
-            <h2 class="text-2xl font-bold border-b-2 border-slate-200 pb-2 mb-4">Especialidades e Habilidades</h2>
+        <section class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="w-1 h-6 bg-indigo-500 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-slate-100">Especialidades e Habilidades</h2>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
-                    <h3 class="font-semibold text-slate-800 mb-2">Cloud & Infraestrutura</h3>
-                    <p class="text-sm text-slate-600">AWS (EKS, EC2, S3, IAM, VPC), Cloud Architecture, High Availability, Disaster Recovery, FinOps.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-slate-900/50 p-5 rounded-xl border border-slate-800 hover:border-slate-700/80 transition-colors space-y-2">
+                    <h3 class="font-semibold text-indigo-300 flex items-center gap-2 text-base">
+                        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 001-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                        Cloud & Infraestrutura
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">AWS (EKS, EC2, S3, IAM, VPC), Cloud Architecture, High Availability, Disaster Recovery, FinOps.</p>
                 </div>
                 
-                <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
-                    <h3 class="font-semibold text-slate-800 mb-2">DevOps & Automação (IaC)</h3>
-                    <p class="text-sm text-slate-600">Terraform, Ansible, GitHub Actions, Jenkins, CI/CD Pipelines, GitOps, Shell Scripting.</p>
+                <div class="bg-slate-900/50 p-5 rounded-xl border border-slate-800 hover:border-slate-700/80 transition-colors space-y-2">
+                    <h3 class="font-semibold text-indigo-300 flex items-center gap-2 text-base">
+                        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        DevOps & Automação (IaC)
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Terraform, Ansible, GitHub Actions, Jenkins, CI/CD Pipelines, GitOps, Shell Scripting.</p>
                 </div>
 
-                <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
-                    <h3 class="font-semibold text-slate-800 mb-2">SRE & Observabilidade</h3>
-                    <p class="text-sm text-slate-600">Kubernetes, Docker, Prometheus, Grafana, Datadog, SLIs/SLOs, Incident Management, AIOps.</p>
+                <div class="bg-slate-900/50 p-5 rounded-xl border border-slate-800 hover:border-slate-700/80 transition-colors space-y-2">
+                    <h3 class="font-semibold text-indigo-300 flex items-center gap-2 text-base">
+                        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                        SRE & Observabilidade
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Kubernetes, Docker, Prometheus, Grafana, Datadog, SLIs/SLOs, Incident Management, Observabilidade Contínua.</p>
                 </div>
 
-                <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
-                    <h3 class="font-semibold text-slate-800 mb-2">Liderança & Metodologias</h3>
-                    <p class="text-sm text-slate-600">Consultoria Técnica de Soluções, Agile/Scrum, Mentoria de Equipes, Arquitetura de Software.</p>
+                <div class="bg-slate-900/50 p-5 rounded-xl border border-slate-800 hover:border-slate-700/80 transition-colors space-y-2">
+                    <h3 class="font-semibold text-indigo-300 flex items-center gap-2 text-base">
+                        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        Liderança & Metodologias
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Consultoria Técnica de Soluções, Agile/Scrum, Mentoria Tech, Arquitetura de Software.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Seção de Projetos em Destaque -->
+        <section id="projetos" class="space-y-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-1 h-6 bg-indigo-500 rounded-full"></div>
+                    <h2 class="text-2xl font-bold text-slate-100">Projetos em Destaque</h2>
+                </div>
+                <span class="text-xs font-semibold text-slate-400">Cases Arquiteturais</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Projeto 1 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-[16/9] w-full bg-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 flex items-center justify-center p-6 text-center">
+                                <svg class="w-12 h-12 text-indigo-400/80 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                            </div>
+                            <span class="absolute top-3 left-3 bg-indigo-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider backdrop-blur-sm">
+                                Observabilidade & SRE
+                            </span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="font-bold text-slate-100 group-hover:text-indigo-400 transition-colors text-base">
+                                Plataforma de Observabilidade e Telemetria em Kubernetes
+                            </h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Arquitetura e implementação de ecossistema de observabilidade distribuída com Prometheus, Grafana e métricas para redução proativa de MTTR.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-2 flex flex-wrap gap-1.5">
+                        <span class="text-[11px] font-medium bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Kubernetes</span>
+                        <span class="text-[11px] font-medium bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Prometheus</span>
+                        <span class="text-[11px] font-medium bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Grafana</span>
+                    </div>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-[16/9] w-full bg-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-950 via-slate-900 to-slate-950 flex items-center justify-center p-6 text-center">
+                                <svg class="w-12 h-12 text-cyan-400/80 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                            </div>
+                            <span class="absolute top-3 left-3 bg-cyan-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider backdrop-blur-sm">
+                                Cloud Architecture
+                            </span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="font-bold text-slate-100 group-hover:text-indigo-400 transition-colors text-base">
+                                Infraestrutura como Código Multi-Cloud & FinOps
+                            </h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Padronização de módulos Terraform reutilizáveis para provisionamento automatizado AWS EKS, VPC e governança contínua de custos FinOps.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-2 flex flex-wrap gap-1.5">
+                        <span class="text-[11px] font-medium bg-slate-800 text-slate-300 px-2 py-0.5 rounded">AWS</span>
+                        <span class="text-[11px] font-medium bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Terraform</span>
+                        <span class="text-[11px] font-medium bg-slate-800 text-slate-300 px-2 py-0.5 rounded">FinOps</span>
+                    </div>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-[16/9] w-full bg-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-emerald-950 via-slate-900 to-slate-950 flex items-center justify-center p-6 text-center">
+                                <svg class="w-12 h-12 text-emerald-400/80 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            </div>
+                            <span class="absolute top-3 left-3 bg-emerald-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider backdrop-blur-sm">
+                                DevOps & GitOps
+                            </span>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="font-bold text-slate-100 group-hover:text-indigo-400 transition-colors text-base">
+                                Pipeline CI/CD GitOps com GitHub Actions & ArgoCD
+                            </h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Automação de esteiras de integração e entrega contínua com validações de segurança, testes estáticos de código e deploy declarativo em Kubernetes.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-2 flex flex-wrap gap-1.5">
+                        <span class="text-[11px] font-medium bg-slate-800 text-slate-300 px-2 py-0.5 rounded">GitHub Actions</span>
+                        <span class="text-[11px] font-medium bg-slate-800 text-slate-300 px-2 py-0.5 rounded">ArgoCD</span>
+                        <span class="text-[11px] font-medium bg-slate-800 text-slate-300 px-2 py-0.5 rounded">GitOps</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <!-- Trajetória Profissional em Destaque -->
-        <section>
-            <h2 class="text-2xl font-bold border-b-2 border-slate-200 pb-2 mb-4">Experiência Profissional Recente</h2>
+        <section id="experiencia" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="w-1 h-6 bg-indigo-500 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-slate-100">Experiência Profissional Recente</h2>
+            </div>
             
             <div class="space-y-6">
                 <!-- Posição 1 -->
-                <div class="border-l-2 border-blue-600 pl-4 py-1">
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-                        <h3 class="text-lg font-bold text-slate-900">Lead Solution Consultant / Cloud Architect</h3>
-                        <span class="text-sm font-semibold text-slate-500">FICO | Atual</span>
+                <div class="border-l-2 border-indigo-500 pl-4 py-2 bg-slate-900/40 rounded-r-xl p-4 border-t border-r border-b border-slate-800/80 space-y-2">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                        <h3 class="text-lg font-bold text-slate-100">Lead Solution Consultant / Cloud Architect</h3>
+                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 w-max">
+                            FICO | Atuação Recente
+                        </span>
                     </div>
-                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
                         Liderança na arquitetura e implementação de soluções de tomada de decisão e análise preditiva na nuvem. Responsável por desenhar ambientes escaláveis e seguros para grandes clientes corporativos, garantindo governança, alta disponibilidade e otimização de custos em ecossistemas AWS.
                     </p>
                 </div>
 
                 <!-- Posição 2 -->
-                <div class="border-l-2 border-slate-300 pl-4 py-1">
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-                        <h3 class="text-lg font-bold text-slate-900">Senior Specialist Systems Engineer</h3>
-                        <span class="text-sm font-semibold text-slate-500">Atuações Anteriores</span>
+                <div class="border-l-2 border-slate-700 pl-4 py-2 bg-slate-900/40 rounded-r-xl p-4 border-t border-r border-b border-slate-800/80 space-y-2">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                        <h3 class="text-lg font-bold text-slate-100">Senior Specialist Systems Engineer</h3>
+                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 w-max">
+                            Atuações Anteriores
+                        </span>
                     </div>
-                    <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
                         Atuação em engenharia de sistemas de missão crítica, liderando iniciativas de automação de infraestrutura, padronização de pipelines de entrega contínua (CI/CD) e estruturação de monitoramento de observabilidade ponta a ponta.
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- Seção de Mentoria Social Gratuita -->
+        <section id="mentoria" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="w-1 h-6 bg-emerald-500 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-slate-100">Mentoria Social Gratuita</h2>
+            </div>
+
+            <div class="bg-slate-800/80 border border-indigo-500/30 rounded-2xl p-6 md:p-8 backdrop-blur-sm relative overflow-hidden shadow-xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <!-- Efeito sutil de brilho de fundo -->
+                <div class="absolute -top-24 -right-24 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <!-- Coluna de Imagem / Flyer com Preview Interativo -->
+                <div class="md:col-span-5 relative group order-2 md:order-1">
+                    <button 
+                        type="button" 
+                        id="open-mentoria-modal" 
+                        class="relative block w-full overflow-hidden rounded-xl border border-slate-700/50 shadow-md group cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400 text-left"
+                        aria-label="Clique para ampliar o flyer da mentoria"
+                    >
+                        <img 
+                            src="/mentoria.png" 
+                            alt="Sessão de Mentoria com Maicon Evangelista - Mentoria Gratuita em Tecnologia e Carreira"
+                            loading="lazy"
+                            decoding="async"
+                            class="w-full h-auto object-cover rounded-xl transition-all duration-300 group-hover:scale-[1.03]"
+                        />
+                        <!-- Overlay de Hover com Destaque de Zoom -->
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium text-xs sm:text-sm backdrop-blur-[2px]">
+                            <span class="bg-slate-900/90 border border-slate-700 px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-xl text-slate-200">
+                                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                                Clique para ampliar
+                            </span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Coluna de Conteúdo & CTA -->
+                <div class="md:col-span-7 space-y-5 order-1 md:order-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Mentoria Gratuita
+                    </div>
+
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-100 tracking-tight leading-snug">
+                        Mentoria Social em Tecnologia & Carreira
+                    </h3>
+
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        Se você busca orientação para acelerar sua jornada em Cloud, SRE, DevOps ou transição de carreira, o 'Sessão de Mentoria' é um projeto social que oferece mentorias 100% gratuitas. Apoio voluntário em revisão de currículo, otimização de perfil no LinkedIn, preparação para entrevistas e direcionamento de carreira.
+                    </p>
+
+                    <div class="pt-2">
+                        <a 
+                            href="https://app.sessaomentoria.com.br/u/maicon-da-silva-evangelista" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-lg shadow-emerald-900/30 inline-flex items-center gap-2 group"
+                            aria-label="Agendar Mentoria Comigo no Sessão de Mentoria (abre em nova aba)"
+                        >
+                            <span>Agendar Mentoria Comigo</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Lightbox para Ampliar Imagem -->
+            <dialog 
+                id="mentoria-modal" 
+                class="backdrop:bg-slate-950/85 backdrop:backdrop-blur-md bg-transparent p-4 max-w-5xl w-full m-auto open:flex open:flex-col items-center justify-center focus:outline-none border-none overflow-visible z-50"
+                aria-label="Visualização ampliada do flyer de mentoria"
+            >
+                <div class="relative max-w-3xl w-full flex flex-col items-center">
+                    <!-- Botão de Fechar -->
+                    <button 
+                        type="button" 
+                        id="close-mentoria-modal" 
+                        class="self-end mb-2 text-slate-300 hover:text-white bg-slate-800/90 hover:bg-slate-700 border border-slate-700 rounded-full p-2.5 transition-all shadow-xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                        aria-label="Fechar visualização ampliada"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+
+                    <!-- Imagem Ampliada -->
+                    <div class="rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-900 max-h-[82vh] flex items-center justify-center">
+                        <img 
+                            src="/mentoria.png" 
+                            alt="Sessão de Mentoria com Maicon Evangelista - Imagem ampliada" 
+                            class="max-h-[80vh] w-auto max-w-full object-contain mx-auto"
+                        />
+                    </div>
+                    
+                    <p class="text-xs text-slate-400 mt-3 text-center">Pressione <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 font-mono text-[11px]">ESC</kbd> ou clique fora para fechar</p>
+                </div>
+            </dialog>
+
+            <!-- Script para controle do Modal Lightbox -->
+            <script is:inline>
+                const openBtn = document.getElementById('open-mentoria-modal');
+                const closeBtn = document.getElementById('close-mentoria-modal');
+                const modal = document.getElementById('mentoria-modal');
+
+                if (openBtn && modal) {
+                    openBtn.addEventListener('click', () => {
+                        modal.showModal();
+                        document.body.classList.add('overflow-hidden');
+                    });
+                }
+
+                const closeModal = () => {
+                    if (modal && modal.open) {
+                        modal.close();
+                        document.body.classList.remove('overflow-hidden');
+                    }
+                };
+
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', closeModal);
+                }
+
+                if (modal) {
+                    modal.addEventListener('click', (event) => {
+                        if (event.target === modal) {
+                            closeModal();
+                        }
+                    });
+
+                    modal.addEventListener('close', () => {
+                        document.body.classList.remove('overflow-hidden');
+                    });
+                }
+            </script>
+
+        </section>
+
+
         <!-- Artigos Técnicos e Publicações (Blog) -->
-        <section>
-            <div class="flex justify-between items-center border-b-2 border-slate-200 pb-2 mb-4">
-                <h2 class="text-2xl font-bold">Artigos Técnicos & Blog</h2>
-                <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-700 hover:underline flex items-center gap-1" aria-label="Ver todas as publicações de Maicon da Silva Evangelista (abre em nova aba)">
-                    Ver todas as publicações &rarr;
+        <section id="artigos" class="space-y-8">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-1 h-6 bg-indigo-500 rounded-full"></div>
+                    <h2 class="text-2xl font-bold text-slate-100">Artigos Técnicos & Blog</h2>
+                </div>
+                <a 
+                    href="https://dev.to/maiconsi" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 transition-colors" 
+                    aria-label="Ver todas as publicações no Dev.to (abre em nova aba)"
+                >
+                    Ver publicações no Dev.to &rarr;
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Artigo 1 -->
-                <article class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-medium">AIOps</span>
-                            <span>•</span>
-                            <time datetime="2026">2026</time>
+            <!-- PRIMEIRO POST TÉCNICO DETALHADO (FEATURED POST) -->
+            <article class="bg-slate-900/80 border border-slate-800/90 rounded-2xl overflow-hidden shadow-2xl hover:border-slate-700/90 transition-all duration-300 space-y-6 p-6 sm:p-8">
+                <div class="space-y-6">
+                    <div class="aspect-[16/9] w-full bg-slate-800 rounded-xl overflow-hidden relative border border-slate-700/50 shadow-inner group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 flex flex-col items-center justify-center p-6 text-center">
+                            <div class="w-16 h-16 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center mb-3 text-indigo-400 group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                            </div>
+                            <span class="text-xs font-bold text-indigo-300 tracking-wider uppercase bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full">
+                                Guia Arquitetural de Alto Impacto
+                            </span>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2 hover:text-blue-700">
-                            <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer">Aplicando Inteligência Artificial no Monitoramento e Operação de Infraestrutura (AIOps)</a>
-                        </h3>
-                        <p class="text-sm text-slate-600 mb-4 line-clamp-3 leading-relaxed">
-                            Uma análise prática de como modelos preditivos e detecção de anomalias reduzem o MTTR e automatizam a remediação de incidentes em clusters Kubernetes de alta disponibilidade.
-                        </p>
                     </div>
-                    <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-700 hover:underline" aria-label="Ler artigo completo sobre AIOps (abre em nova aba)">Ler artigo completo &rarr;</a>
+
+                    <header class="space-y-3">
+                        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400">
+                            <span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2.5 py-0.5 rounded font-semibold">
+                                Astro & IA
+                            </span>
+                            <span>•</span>
+                            <span class="bg-slate-800 text-slate-300 px-2.5 py-0.5 rounded font-medium">DevOps & Cloud</span>
+                            <span>•</span>
+                            <time datetime="2026-10-26">26 de Outubro, 2026</time>
+                            <span>•</span>
+                            <span>Tempo de leitura: 8 min</span>
+                        </div>
+
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-100 leading-tight">
+                            Como Construir um Portfólio Profissional de Alto Impacto e Blog do Zero com Astro, GitHub Pages e Agentes de IA
+                        </h3>
+
+                        <p class="text-base text-slate-300 leading-relaxed font-medium italic border-l-2 border-indigo-500 pl-4 py-1 bg-indigo-500/5 rounded-r-lg">
+                            Um guia arquitetural passo a passo para engenheiros de tecnologia estruturarem sua presença digital com custo zero, deploy automatizado e aceleração por IA.
+                        </p>
+                    </header>
+                </div>
+                <!-- Conteúdo Técnico Detalhado do Post -->
+                <div class="space-y-8 text-slate-300 leading-relaxed text-sm sm:text-base border-t border-slate-800 pt-6">
+                    
+                    <p>
+                        No cenário atual de tecnologia, possuir um portfólio de alta performance e um blog técnico independente é um diferencial estratégico para Arquitetos de Nuvem, Engenheiros SRE e DevOps. Este artigo apresenta a blueprint arquitetural completa utilizada para construir este portal, combinando a velocidade do gerador de sites estáticos (SSG) Astro, estilização moderna com Tailwind CSS v4, automação CI/CD no GitHub Pages e produtividade aumentada por Agentes de IA.
+                    </p>
+
+                    <!-- Etapa 1 -->
+                    <section class="space-y-3 bg-slate-950/60 p-5 sm:p-6 rounded-xl border border-slate-800/80">
+                        <div class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-600 text-white font-bold text-xs">1</span>
+                            <h4 class="text-lg font-bold text-slate-100">Etapa 1: Planejamento da Arquitetura SSG</h4>
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            A escolha do <strong>Astro</strong> como framework SSG (Static Site Generation) baseia-se no seu modelo inovador de "Zero JavaScript por Padrão". O site é renderizado inteiramente no momento do build em HTML/CSS estático, garantindo pontuação máxima no Google Lighthouse e carregamento instantâneo.
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-xs sm:text-sm text-slate-400 pl-2">
+                            <li><strong>Migração & Framework:</strong> Adoção do Astro v7 para geração estática pura e rotas ultra leves.</li>
+                            <li><strong>Estilização Nativa:</strong> Integração com <code>Tailwind CSS v4</code> via plugin oficial <code>@tailwindcss/vite</code> para build instantâneo.</li>
+                            <li><strong>Hospedagem Custo Zero:</strong> Deploy de arquivos estáticos hospedados com alta disponibilidade e segurança no GitHub Pages.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Etapa 2 -->
+                    <section class="space-y-3 bg-slate-950/60 p-5 sm:p-6 rounded-xl border border-slate-800/80">
+                        <div class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-600 text-white font-bold text-xs">2</span>
+                            <h4 class="text-lg font-bold text-slate-100">Etapa 2: Estruturação Semântica e Design System</h4>
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            O design system adota a paleta <em>Dark/Slate Theme</em>, projetada para conforto visual e foco no conteúdo técnico.
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-xs sm:text-sm text-slate-400 pl-2">
+                            <li><strong>Componentização Astro:</strong> Layouts reaproveitáveis em <code>Layout.astro</code> com suporte a slots semânticos.</li>
+                            <li><strong>Acessibilidade & Semântica:</strong> Marcação estrita com tags HTML5 (<code>&lt;main&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>) e navegação facilitada com links de salto (skip-link).</li>
+                            <li><strong>Estilização por Utilitários:</strong> Efeitos modernos com transparência e desfoque (<code>backdrop-blur-sm</code>) e microinterações de hover dinâmicas.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Etapa 3 -->
+                    <section class="space-y-3 bg-slate-950/60 p-5 sm:p-6 rounded-xl border border-slate-800/80">
+                        <div class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-600 text-white font-bold text-xs">3</span>
+                            <h4 class="text-lg font-bold text-slate-100">Etapa 3: SEO Avançado, Metadados e Assets Estáticos</h4>
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Implementação de estratégias robustas de indexação orgânica e compartilhamento rico em redes sociais como LinkedIn e Twitter.
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-xs sm:text-sm text-slate-400 pl-2">
+                            <li><strong>URLs Canônicas & Astro.site:</strong> Resolução canônica de links absolutos com a API <code>Astro.site</code>.</li>
+                            <li><strong>Open Graph & Twitter Cards:</strong> Tags completas de preview social apontando para o asset <code>/og-image.png</code>.</li>
+                            <li><strong>Schema.org JSON-LD:</strong> Estruturação com entidades <code>Person</code> e <code>ProfilePage</code> com marcação <code>is:inline</code>.</li>
+                            <li><strong>Assets em /public:</strong> Organização estática de arquivos essenciais como <code>CNAME</code>, favicons e thumbnails.</li>
+                        </ul>
+                    </section>
+
+
+                    <!-- Etapa 4 -->
+                    <section class="space-y-3 bg-slate-950/60 p-5 sm:p-6 rounded-xl border border-slate-800/80">
+                        <div class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-600 text-white font-bold text-xs">4</span>
+                            <h4 class="text-lg font-bold text-slate-100">Etapa 4: Automação da Pipeline CI/CD com GitHub Actions</h4>
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Esteira contínua e sem atritos de entrega de software executada nativamente em cada commit na branch de release.
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-xs sm:text-sm text-slate-400 pl-2">
+                            <li><strong>Build com Node.js LTS:</strong> Execução do build do Astro gerando a saída estática otimizada em <code>dist/</code>.</li>
+                            <li><strong>Autenticação OIDC:</strong> Permissões seguras via GitHub OIDC dispensando o uso de chaves secretas longas ou estáticas.</li>
+                            <li><strong>Deploy em Memória:</strong> Utilização da GitHub Action oficial <code>actions/deploy-pages</code> para publicação contínua sem downtime.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Etapa 5 -->
+                    <section class="space-y-3 bg-slate-950/60 p-5 sm:p-6 rounded-xl border border-slate-800/80">
+                        <div class="flex items-center gap-3">
+                            <span class="flex items-center justify-center w-7 h-7 rounded-full bg-indigo-600 text-white font-bold text-xs">5</span>
+                            <h4 class="text-lg font-bold text-slate-100">Etapa 5: Aceleração com Agentes de IA no WSL</h4>
+                        </div>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Aceleração do ciclo de vida de desenvolvimento de software com inteligência artificial contextual em ambiente de engenharia avançado.
+                        </p>
+                        <ul class="list-disc list-inside space-y-1 text-xs sm:text-sm text-slate-400 pl-2">
+                            <li><strong>Agente Autônomo:</strong> Execução com <strong>Cline</strong> integrado ao modelo <strong>Gemini 3.6 Flash</strong>.</li>
+                            <li><strong>Ambiente VS Code Remote WSL:</strong> Desenvolvimento direto em ecossistema Linux no WSL garantindo paridade com produção.</li>
+                            <li><strong>Refatoração e Manutenção:</strong> Aplicação autônoma de diffs pontuais, testes e auditoria de padrões de código.</li>
+                        </ul>
+                    </section>
+
+                </div>
+
+                <!-- Footer do Card do Post -->
+                <div class="border-t border-slate-800 pt-4 flex flex-wrap justify-between items-center text-xs text-slate-400 gap-2">
+                    <span class="font-medium text-slate-300">Autor: Maicon da Silva Evangelista</span>
+                    <a 
+                        href="https://github.com/maiconsi" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-1"
+                        aria-label="Ver repositório no GitHub (abre em nova aba)"
+                    >
+                        Código-fonte no GitHub &rarr;
+                    </a>
+                </div>
+
+            </article>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Artigo Secundário 1 -->
+                <article class="bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-[16/9] w-full bg-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-950 flex items-center justify-center p-6 text-center">
+                                <svg class="w-10 h-10 text-indigo-400 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </div>
+                            <span class="absolute top-3 left-3 bg-purple-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider backdrop-blur-sm">
+                                Estudo & Tendências
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <time datetime="2026">2026</time>
+                                <span>•</span>
+                                <span>Artigo Técnico</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-100 group-hover:text-indigo-400 transition-colors leading-snug">
+                                <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer">
+                                    Explorando Inteligência Artificial no Monitoramento de Infraestrutura (AIOps)
+                                </a>
+                            </h3>
+                            <p class="text-xs text-slate-400 leading-relaxed line-clamp-3">
+                                Um estudo arquitetural sobre como modelos preditivos e detecção de anomalias prometem apoiar a redução do MTTR e a automação de remediação em clusters Kubernetes.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1" aria-label="Ler estudo sobre IA em infraestrutura no Dev.to (abre em nova aba)">
+                            Ler artigo no Dev.to &rarr;
+                        </a>
+                    </div>
                 </article>
 
-                <!-- Artigo 2 -->
-                <article class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+                <!-- Artigo Secundário 2 -->
+                <article class="bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 group flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center gap-2 text-xs text-slate-500 mb-2">
-                            <span class="bg-slate-100 text-slate-800 px-2 py-0.5 rounded font-medium">DevOps & SRE</span>
-                            <span>•</span>
-                            <time datetime="2026">2026</time>
+                        <div class="aspect-[16/9] w-full bg-slate-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-950 via-slate-900 to-slate-950 flex items-center justify-center p-6 text-center">
+                                <svg class="w-10 h-10 text-cyan-400 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <span class="absolute top-3 left-3 bg-cyan-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider backdrop-blur-sm">
+                                DevOps & SRE
+                            </span>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2 hover:text-blue-700">
-                            <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer">Estruturando Pipelines de CI/CD Resilientes com GitHub Actions e Terraform</a>
-                        </h3>
-                        <p class="text-sm text-slate-600 mb-4 line-clamp-3 leading-relaxed">
-                            Boas práticas para provisionamento de infraestrutura como código (IaC), gestão de estados remotos e automação de deploys multi-ambiente sem downtime.
-                        </p>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <time datetime="2026">2026</time>
+                                <span>•</span>
+                                <span>Artigo Técnico</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-100 group-hover:text-indigo-400 transition-colors leading-snug">
+                                <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer">
+                                    Estruturando Pipelines de CI/CD Resilientes com GitHub Actions e Terraform
+                                </a>
+                            </h3>
+                            <p class="text-xs text-slate-400 leading-relaxed line-clamp-3">
+                                Boas práticas para provisionamento de infraestrutura como código (IaC), gestão de estados remotos e automação de deploys multi-ambiente sem downtime.
+                            </p>
+                        </div>
                     </div>
-                    <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-700 hover:underline" aria-label="Ler artigo completo sobre Pipelines CI/CD (abre em nova aba)">Ler artigo completo &rarr;</a>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="https://dev.to/maiconsi" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1" aria-label="Ler artigo completo sobre Pipelines CI/CD no Dev.to (abre em nova aba)">
+                            Ler artigo no Dev.to &rarr;
+                        </a>
+                    </div>
                 </article>
             </div>
         </section>
 
         <!-- Educação & Comunidade -->
-        <section>
-            <h2 class="text-2xl font-bold border-b-2 border-slate-200 pb-2 mb-4">Educação e Contribuição para a Comunidade</h2>
-            <ul class="list-disc list-inside text-slate-600 space-y-3">
-                <li><strong>Especialização Acadêmica:</strong> Pós-graduação focada em Inteligência Artificial aplicada a DevOps (AIOps).</li>
-                <li><strong>Mentoria Tech:</strong> Oferta de mentoria de carreira para profissionais de tecnologia que buscam transição ou aprimoramento em Cloud Engineering e SRE.</li>
-                <li><strong>Criação de Conteúdo:</strong> Desenvolvimento de trilhas e cursos estruturados focados em fundamentos de plataforma, cultura e transição para o ecossistema DevOps.</li>
+        <section class="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4">
+            <div class="flex items-center gap-3">
+                <div class="w-1 h-6 bg-indigo-500 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-slate-100">Educação e Contribuição para a Comunidade</h2>
+            </div>
+            <ul class="space-y-3 text-slate-300 text-sm sm:text-base">
+                <li class="flex items-start gap-3">
+                    <span class="text-indigo-400 mt-1 font-bold">&check;</span>
+                    <div>
+                        <strong class="text-slate-100">Especialização Acadêmica:</strong> Em preparação para iniciar pós-graduação focada em Inteligência Artificial aplicada a Operações de TI (AIOps).
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-indigo-400 mt-1 font-bold">&check;</span>
+                    <div>
+                        <strong class="text-slate-100">Mentoria Tech:</strong> Oferta de mentoria de carreira para profissionais de tecnologia que buscam transição ou aprimoramento em Cloud Engineering e SRE.
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-indigo-400 mt-1 font-bold">&check;</span>
+                    <div>
+                        <strong class="text-slate-100">Criação de Conteúdo:</strong> Desenvolvimento de trilhas e cursos estruturados focados em fundamentos de plataforma, cultura e transição para o ecossistema DevOps.
+                    </div>
+                </li>
             </ul>
         </section>
 
     </main>
 
     <!-- Rodapé -->
-    <footer class="bg-slate-900 text-center py-8 text-slate-400 mt-8">
-        <p>&copy; 2026 Maicon da Silva Evangelista. Arquitetado para Cloud & SRE.</p>
+    <footer class="bg-slate-950 border-t border-slate-800/80 text-center py-10 text-slate-400 text-sm mt-12 space-y-4">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs sm:text-sm text-slate-400">
+                &copy; 2026 Maicon da Silva Evangelista. Arquitetado para Cloud & SRE.
+            </p>
+            <div class="flex items-center gap-4 text-xs font-medium">
+                <a href="https://www.linkedin.com/in/maiconsi/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition-colors">LinkedIn</a>
+                <a href="https://github.com/maiconsi" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition-colors">GitHub</a>
+                <a href="mailto:maiconsi@hotmail.com" class="hover:text-indigo-400 transition-colors">E-mail</a>
+            </div>
+        </div>
     </footer>
 </Layout>
